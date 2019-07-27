@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveneness-exec
+spec:
+  containers:
+    - image: harshthakur/execlive:late
+      name: busybee
+      livenessProbe:
+        exec:
+          command:
+          - ls 
+        periodSeconds: 15
+        initialDelaySeconds: 15
