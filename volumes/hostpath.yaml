@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hp
+spec:
+  containers:
+  - image: luksa/kubia
+    name: test-container
+    volumeMounts:
+    - mountPath: /hello
+      name: test-volume
+  volumes:
+  - name: test-volume
+    hostPath:
+      path: /home/docker
